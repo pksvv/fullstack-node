@@ -19,7 +19,8 @@ app.use(bodyParser.json())
 app.get('/',(req,res)=>{
     db.collection(col_name).find({isActive:true}).toArray((err,result)=>{
         if(err) throw err;
-        res.render('index',{data:result})
+        //res.render('index',{data:result})
+        res.send(result);
     })
 })
 
